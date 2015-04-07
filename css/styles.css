@@ -5,4 +5,42 @@
 
 }
 
+.button {
+	height: 20px;
+	width: 75px;
+	background-color: black;
+	color: white;
+	text-decoration: 2px;
+	border: 3px black solid;
+	text-align: center;
+	display: inline-block;
+
+}
+#home {
+	height: 20px;
+	width: 75px;
+	background-color: black;
+	color: white;
+	text-decoration: 2px;
+	border: 3px black solid;
+	text-align: center;
+	display: inline-block;
+}
+
+.loop {
+	height: 20px;
+	width: 75px;
+	background-color: black;
+	color: white;
+	text-decoration: 2px;
+	border: 3px black solid;
+	text-align: center;
+	display: inline-block;
+}
+
+.break {
+	height: 20px;
+}
+
 #map { height: 500px; }
+
