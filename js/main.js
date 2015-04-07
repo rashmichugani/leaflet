@@ -10,7 +10,50 @@ L.tileLayer('http://{s}.tiles.mapbox.com/v3/examples.map-i875mjb7/{z}/{x}/{y}.pn
 var marker = L.marker([40.8075, -73.9633]).addTo(map);
 
 marker.bindPopup("<b>Columbia University</b><br>Journalism School.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
+
+ $('.button').on("click", function(){
+	map.locate({setView: true})
+	});
+
+$('#home').on("click", function(){
+	map.locate({setView: false})
+	map.panTo([40.7803, -73.9833])
+	map.zoomOut(4)
+	});
+	
+	var image_data = [
+			{
+				name: 'Empire State building',
+				lat: '40.748441',
+				lng: '-73.985664',
+				text: 'Tallest building'
+			},
+			{
+				name: 'Union Square',
+				lat: '42.379654',
+				lng: '-71.095602',
+				text: 'Fun neighborhood'
+			}
+			];
+			
+		var locations = ['Empire State Building', 'Union Square']
+	
+	function cycle(markers) {
+   	 var i = 0;
+   	 function run() {
+        if (++i > markers.length - 1) i = 0;
+        map.setView(markers[i].getLatLng(), 12);
+        markers[i].openPopup();
+        window.setTimeout(run, 2000);
+    }
+    run();}
+
+    	for (var i = 0; i < image_data.length; i++) {
+   marker = new L.marker([image_data[i][1],planes[i][2]])
+    .bindPopup(planes[i][0])
+    .addTo(map);
+  }
 
 }).call(this);
+
+	
